@@ -1,40 +1,71 @@
-import React from 'react';
+import visionBanner from "../assets/motto.jpg";
 
 const VisionBanner = () => {
   return (
-    <div className="bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 py-6 lg:py-8 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 bg-gradient-to-r from-orange-400/20 via-transparent to-orange-400/20"></div>
-      <div className="absolute top-0 left-1/4 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 text-center relative z-10">
-          {/* Vision */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-            <h3 className="text-lg lg:text-xl font-bold mb-3 text-green-800 drop-shadow-sm">Vision</h3>
-            <p className="text-sm lg:text-base text-green-800 font-medium leading-relaxed">
-              "To be a global leader in promoting good corporate governance"
-            </p>
-          </div>
+    <div className="relative w-full h-32 lg:h-80 overflow-hidden">
+      {/* Main Background Image */}
 
-          {/* Motto */}
-          <div className="bg-white/15 backdrop-blur-sm rounded-xl p-4 lg:p-6 border border-white/30 hover:bg-white/25 transition-all duration-300 transform hover:scale-105">
-            <h3 className="text-lg lg:text-xl font-bold mb-3 text-red-800 drop-shadow-sm">Motto</h3>
-            <div className="flex flex-col items-center space-y-2">
-              <p className="text-lg lg:text-xl font-bold text-gray-800 drop-shadow-sm">सत्यं वद । धर्मं चर ।</p>
-              <p className="text-sm lg:text-base text-red-600 font-semibold italic">speak truth, abide by the law</p>
-            </div>
-          </div>
 
-          {/* Mission */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
-            <h3 className="text-lg lg:text-xl font-bold mb-3 text-blue-800 drop-shadow-sm">Mission</h3>
-            <p className="text-sm lg:text-base text-blue-800 font-medium leading-relaxed">
-              "To develop high calibre professionals facilitating good corporate governance"
-            </p>
-          </div>
-        </div>
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${visionBanner})`
+        }}
+      ></div>
+
+
+      {/* Geometric Pattern Overlay */}
+      <div className="absolute inset-0 opacity-30">
+        <svg className="w-full h-full" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <pattern id="hexPattern" width="60" height="52" patternUnits="userSpaceOnUse">
+              <polygon points="30,1 52,15 52,37 30,51 8,37 8,15" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#hexPattern)" />
+        </svg>
+      </div>
+
+      {/* Corporate Building Skyline */}
+      <div className="absolute bottom-0 left-0 right-0 opacity-25">
+        <svg viewBox="0 0 1200 150" className="w-full h-16">
+          <polygon points="0,150 80,60 120,80 160,40 200,70 240,30 280,60 320,35 360,75 400,45 440,85 480,55 520,95 560,65 600,105 640,75 680,115 720,85 760,125 800,95 840,135 880,105 920,145 960,115 1000,150 1200,150" fill="rgba(0,0,0,0.3)" />
+        </svg>
+      </div>
+
+      {/* Floating Elements */}
+      <div className="absolute top-8 left-8 w-20 h-20 bg-white/15 rounded-full blur-2xl animate-pulse"></div>
+      <div className="absolute top-16 right-16 w-16 h-16 bg-white/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute bottom-16 left-1/3 w-24 h-24 bg-white/12 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+
+      {/* Abstract Geometric Shapes */}
+      <div className="absolute top-12 right-1/4 opacity-20">
+        <svg width="80" height="80" viewBox="0 0 80 80">
+          <polygon points="40,5 70,25 70,55 40,75 10,55 10,25" fill="none" stroke="white" strokeWidth="2" />
+          <polygon points="40,15 60,30 60,50 40,65 20,50 20,30" fill="none" stroke="white" strokeWidth="1" />
+        </svg>
+      </div>
+
+      <div className="absolute bottom-20 right-12 opacity-15">
+        <svg width="60" height="60" viewBox="0 0 60 60">
+          <circle cx="30" cy="30" r="25" fill="none" stroke="white" strokeWidth="2" />
+          <circle cx="30" cy="30" r="15" fill="none" stroke="white" strokeWidth="1" />
+          <circle cx="30" cy="30" r="5" fill="white" />
+        </svg>
+      </div>
+
+      {/* Dynamic Light Rays */}
+      <div className="absolute inset-0 opacity-20">
+        <svg className="w-full h-full" viewBox="0 0 400 200">
+          <defs>
+            <radialGradient id="lightRay" cx="50%" cy="0%" r="100%">
+              <stop offset="0%" stopColor="white" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="white" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+          <ellipse cx="200" cy="0" rx="150" ry="100" fill="url(#lightRay)" transform="rotate(15 200 0)" />
+          <ellipse cx="300" cy="0" rx="100" ry="80" fill="url(#lightRay)" transform="rotate(-15 300 0)" />
+        </svg>
       </div>
     </div>
   );

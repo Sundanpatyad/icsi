@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Volume2, Menu, X, ChevronDown, Globe, Phone, Mail } from 'lucide-react';
+import icsiLogo from '../assets/logo_full.png';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -57,29 +58,22 @@ const Header = () => {
       </div>
 
       {/* Main Header */}
-      <header className={`sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-lg shadow-xl border-b border-blue-100' 
+      <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
+          ? 'bg-white/95 backdrop-blur-lg shadow-xl border-b border-blue-100'
           : 'bg-white shadow-lg border-b border-gray-200'
-      }`}>
+        }`}>
         <div className="mx-auto px-40 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20 lg:h-24">
             {/* Logo Section */}
-            <div className="flex items-center space-x-4 flex-shrink-0">
-              <div className="flex items-center">
-                <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-blue-900 to-blue-700 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                  <span className="text-sm lg:text-base">ICSI</span>
-                </div>
-                <div className="ml-3 lg:ml-4 hidden sm:block">
-                  <h1 className="text-sm lg:text-lg font-bold text-gray-900 leading-tight">
-                    THE INSTITUTE OF<br />
-                    <span className="text-blue-900 bg-gradient-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent">
-                      Company Secretaries of India
-                    </span>
-                  </h1>
-                  <p className="text-xs lg:text-sm text-gray-600 font-medium">भारतीय कंपनी सचिव संस्थान</p>
-                </div>
-              </div>
+            <div className="flex items-center">
+              {/* Logo Image */}
+              <img
+                src={icsiLogo}
+                alt="ICSI Logo"
+                className="w-14 h-14 lg:w-48 lg:h-48 object-contain"
+              />
+
+             
             </div>
 
             {/* Desktop Navigation & Search */}
@@ -88,7 +82,7 @@ const Header = () => {
               <nav className="flex space-x-6">
                 {quickLinks.map((link, index) => (
                   <div key={index} className="relative group">
-                    <a 
+                    <a
                       href={link.href}
                       className="text-sm font-medium text-gray-700 hover:text-blue-900 transition-all duration-300 py-2 px-1 relative"
                     >
@@ -150,11 +144,10 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen 
-            ? 'max-h-screen opacity-100 visible' 
+        <div className={`lg:hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen
+            ? 'max-h-screen opacity-100 visible'
             : 'max-h-0 opacity-0 invisible overflow-hidden'
-        }`}>
+          }`}>
           <div className="bg-white border-t border-gray-200 shadow-xl">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
               {/* Mobile Search */}

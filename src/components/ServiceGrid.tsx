@@ -217,7 +217,7 @@ const ServiceGrid = () => {
                     alt={service.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-80 group-hover:opacity-70 transition-opacity duration-300`} />
+                  <div className={`absolute inset-0  opacity-80 group-hover:opacity-70 transition-opacity duration-300`} />
                   <div className="absolute top-4 left-4 p-3 bg-white/20 backdrop-blur-sm rounded-lg">
                     <Icon className="text-white" size={24} />
                   </div>
