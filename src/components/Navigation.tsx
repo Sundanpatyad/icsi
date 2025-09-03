@@ -21,17 +21,16 @@ const Navigation = () => {
   return (
     <nav className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 shadow-xl relative">
       <div className="mx-auto flex justify-center px-4 sm:px-6 lg:px-8">
-    
-
+              
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center justify-between py-2">
+        <div className="hidden lg:flex  gap-1 items-center justify-between py-2">
           <div className="flex space-x-1 overflow-x-auto scrollbar-hide">
             {navItems.map((item, index) => {
               const Icon = item.icon;
               return (
                 <button
                   key={index}
-                  className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-300 whitespace-nowrap group ${
+                  className={`flex items-center space-x-2 px-4 py-3 whitespace-nowrap group ${
                     item.active
                       ? 'bg-white text-blue-900 shadow-xl transform scale-105'
                       : 'text-white hover:bg-blue-700/80 hover:shadow-lg hover:scale-105'
@@ -46,7 +45,7 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className="lg:hidden py-3">
+        <div className="lg:hidden py-3 w-full">
           <button
             onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
             className="flex items-center space-x-2 text-white hover:bg-blue-700/50 px-4 py-2 rounded-lg transition-all duration-300"
@@ -57,31 +56,25 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Navigation Menu */}
-        <div className={`lg:hidden transition-all duration-300 ease-in-out ${
-          isMobileNavOpen 
-            ? 'max-h-screen opacity-100 visible pb-4' 
-            : 'max-h-0 opacity-0 invisible overflow-hidden'
-        }`}>
-          <div className="grid grid-cols-2 gap-3 mt-4">
-            {navItems.map((item, index) => {
-              const Icon = item.icon;
-              return (
+        {isMobileNavOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-gradient-to-b from-blue-900 to-blue-800 shadow-2xl z-50">
+            <div className="py-2">
+              {navItems.map((item, index) => (
                 <button
                   key={index}
-                  className={`flex flex-col items-center space-y-2 p-4 rounded-xl transition-all duration-300 ${
+                  className={`w-full text-left px-6 py-4 transition-all duration-200 border-b border-blue-700/30 last:border-b-0 ${
                     item.active
-                      ? 'bg-white text-blue-900 shadow-lg'
-                      : 'text-white hover:bg-blue-700/50 hover:shadow-md'
+                      ? 'bg-blue-700/50 text-white font-semibold'
+                      : 'text-white hover:bg-blue-700/40'
                   }`}
                   onClick={() => setIsMobileNavOpen(false)}
                 >
-                  <Icon size={20} />
-                  <span className="text-xs font-medium text-center leading-tight">{item.label}</span>
+                  <span className="text-sm font-medium tracking-wide">{item.label}</span>
                 </button>
-              );
-            })}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </nav>
   );

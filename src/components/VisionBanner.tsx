@@ -2,12 +2,12 @@ import visionBanner from "../assets/motto.jpg";
 
 const VisionBanner = () => {
   return (
-    <div className="relative w-full h-32 lg:h-80 overflow-hidden">
+    <div className="relative w-full h-32 lg:h-52 bg-gradient-to-b from-orange-100 to-green-100 overflow-hidden">
       {/* Main Background Image */}
 
 
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-contain bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${visionBanner})`
         }}
