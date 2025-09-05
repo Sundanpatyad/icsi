@@ -2,16 +2,20 @@ import visionBanner from "../assets/motto.jpg";
 
 const VisionBanner = () => {
   return (
-    <div className="relative w-full h-32 lg:h-52 bg-gradient-to-b from-orange-100 to-green-100 overflow-hidden">
+    <div className="relative w-full h-36  bg-gradient-to-b bg-cover bg-center bg-no-repeat from-orange-100 to-green-100 overflow-hidden"
+    style={{
+      backgroundImage: `url(${visionBanner})`
+    }}
+    >
       {/* Main Background Image */}
 
-
+{/* 
       <div
         className="absolute inset-0 bg-contain bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${visionBanner})`
         }}
-      ></div>
+      ></div> */}
 
 
       {/* Geometric Pattern Overlay */}

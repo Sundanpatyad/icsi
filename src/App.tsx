@@ -1,14 +1,19 @@
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Routes, Route } from 'react-router-dom';
-import Home from './screens/Home';
-function App() {
-  return (
-   <Router>
-    <Routes>
-      <Route path="/" element={<Home />} />
-    </Routes>
-   </Router>
-  );
+import { Suspense } from "react";
+import { BrowserRouter, useRoutes } from "react-router-dom";
+import routes from "./navigation/routes";
+import { RouteObject } from "react-router-dom";
+
+function AppRoutes() {
+  // useRoutes takes the route config and renders
+  return useRoutes(routes as RouteObject[]);
 }
 
-export default App;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Suspense fallback={<div>Loading...</div>}>
+        <AppRoutes />
+      </Suspense>
+    </BrowserRouter>
+  );
+}

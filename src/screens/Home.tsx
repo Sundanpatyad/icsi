@@ -7,6 +7,7 @@ import PartnerLogos from '../components/PartnerLogos'
 import Footer from '../components/Footer'
 import SocialSidebar from '../components/SocialSidebar'
 import BackToTop from '../components/BackToTop'
+
 const Home = () => {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -25,4 +26,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;
