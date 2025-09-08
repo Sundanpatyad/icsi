@@ -6,16 +6,16 @@ const Navigation = () => {
 
   const navItems = [
     { icon: Home, label: 'HOME', active: true },
-    { icon: User, label: 'PROFILE' },
-    { icon: Users, label: 'MEMBER' },
-    { icon: GraduationCap, label: 'STUDENT' },
-    { icon: Briefcase, label: 'EMPLOYEE' },
-    { icon: Globe, label: 'ONLINE SERVICES' },
-    { icon: PlayCircle, label: 'MEDIA CENTRE' },
-    { icon: Building, label: 'CAREERS' },
-    { icon: Building, label: 'TENDERS' },
-    { icon: Phone, label: 'CONTACT US' },
-    { icon: FileText, label: 'EXAMINATION' },
+    { icon: User, label: 'ABOUT' },
+    { icon: Users, label: 'COURSES' },
+    { icon: GraduationCap, label: 'MEMBER' },
+    { icon: Briefcase, label: 'STUDENT' },
+    { icon: Globe, label: 'CONTACT' },
+    // { icon: PlayCircle, label: 'MEDIA CENTRE' },
+    // { icon: Building, label: 'CAREERS' },
+    // { icon: Building, label: 'TENDERS' },
+    // { icon: Phone, label: 'CONTACT US' },
+    // { icon: FileText, label: 'EXAMINATION' },
   ];
 
   return (

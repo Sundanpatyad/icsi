@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Volume2, Menu, X, ChevronDown, Globe, Phone, Mail } from 'lucide-react';
-import icsiLogo from '../assets/logo_full.png';
+import icsiLogo from '../assets/logo.png';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -59,8 +59,8 @@ const Header = () => {
 
       {/* Main Header */}
       <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-white/95 backdrop-blur-lg shadow-xl border-b border-blue-100'
-          : 'bg-white shadow-lg border-b border-gray-200'
+          ? 'bg-[#F7F7F7] backdrop-blur-lg shadow-xl border-b border-blue-100'
+          : 'bg-[#F7F7F7] shadow-lg border-b border-gray-200'
         }`}>
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-40">
           <div className="flex items-center justify-between h-16 sm:h-18 md:h-20 lg:h-24">
@@ -70,7 +70,7 @@ const Header = () => {
               <img
                 src={icsiLogo}
                 alt="ICSI Logo"
-                className="h-10 w-auto sm:h-12 md:h-14 lg:h-16 xl:h-20 object-contain"
+                className="h-10 w-auto mix-blend-multiply sm:h-12 md:h-14 lg:h-16 xl:h-20 object-contain"
               />
             </div>
 
