@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Volume2, Menu, X, ChevronDown, Globe, Phone, Mail } from 'lucide-react';
 import icsiLogo from '../assets/logo.png';
+import VisionBanner from './VisionBanner';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -235,6 +236,7 @@ const Header = () => {
           </div>
         </div>
       </header>
+      <VisionBanner />
     </>
   );
 };

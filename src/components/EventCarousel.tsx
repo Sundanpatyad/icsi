@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
+import first from '../assets/1.jpg';
+import second from '../assets/2.jpg';
+import third from '../assets/3.jpg';
+import fourth from '../assets/4.jpg';
+import fifth from '../assets/5.jpg';
+import sixth from '../assets/5.jpg';
 
 const EventCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,19 +15,19 @@ const EventCarousel = () => {
     {
       id: 1,
       title: 'Ministry of Corporate Affairs Meeting',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: first,
       type: 'main'
     },
     {
       id: 2,
       title: '53rd National Convention Company Secretaries',
-      image: 'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: second,
       type: 'main'
     },
     {
       id: 3,
       title: 'ICSI 4th International Conference',
-      image: 'https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: third,
       type: 'main'
     }
   ];
@@ -32,7 +38,7 @@ const EventCarousel = () => {
       title: '53rd National',
       subtitle: 'Company Secretaries',
       date: '53rd National Convention',
-      image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: fourth,
       bgColor: 'from-blue-900 to-blue-700'
     },
     {
@@ -41,7 +47,7 @@ const EventCarousel = () => {
       subtitle: 'ICSI 4th International Conference',
       date: '3-5 September 2025',
       location: 'Crowne Plaza • Sydney, Australia',
-      image: 'https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: fifth,
       bgColor: 'from-orange-600 to-red-600'
     },
     {
@@ -50,7 +56,7 @@ const EventCarousel = () => {
       subtitle: 'National Awards For',
       subtitle2: '25th ICSI Awards',
       date: 'Excellence in Corporate Governance, 2025',
-      image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: sixth,
       bgColor: 'from-yellow-600 to-yellow-800'
     },
     {
@@ -59,21 +65,21 @@ const EventCarousel = () => {
       subtitle: 'Mentorship Programme',
       date: '21st September ICSI Board West',
       subtitle2: 'Mentorship Programme',
-      image: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: sixth,
       bgColor: 'from-green-700 to-green-900'
     },
     {
       id: 5,
       title: 'Latest @ ICSI',
       subtitle: 'Latest @ ICSI',
-      image: 'https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: sixth,
       bgColor: 'from-teal-500 to-teal-700'
     },
     {
       id: 6,
       title: 'Academic Portal',
       subtitle: 'Academic Portal',
-      image: 'https://images.pexels.com/photos/1181772/pexels-photo-1181772.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: sixth,
       bgColor: 'from-gray-600 to-gray-800'
     }
   ];

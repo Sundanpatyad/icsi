@@ -1,6 +1,4 @@
-import Header from '../components/Header'
 import VisionBanner from '../components/VisionBanner'
-import Navigation from '../components/Navigation'
 import EventCarousel from '../components/EventCarousel'
 import ServiceGrid from '../components/ServiceGrid'
 import PartnerLogos from '../components/PartnerLogos'
@@ -11,9 +9,7 @@ import BackToTop from '../components/BackToTop'
 const Home = () => {
   return (
     <div className="min-h-screen bg-gray-50">
-    <Header />
-    <VisionBanner />
-    <Navigation />
+    {/* <VisionBanner /> */}
     <main className="relative">
       <EventCarousel />
       <ServiceGrid />

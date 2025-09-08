@@ -1,16 +1,17 @@
 import React from 'react';
 import { Home, User, Users, GraduationCap, Briefcase, Globe, PlayCircle, Building, Phone, FileText, Menu } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = React.useState(false);
 
   const navItems = [
-    { icon: Home, label: 'HOME', active: true },
-    { icon: User, label: 'ABOUT' },
-    { icon: Users, label: 'COURSES' },
-    { icon: GraduationCap, label: 'MEMBER' },
-    { icon: Briefcase, label: 'STUDENT' },
-    { icon: Globe, label: 'CONTACT' },
+    { icon: Home, label: 'HOME', active: true, route: '/' },
+    { icon: User, label: 'ABOUT', route: '/about' },
+    { icon: Users, label: 'COURSES', route: '/courses' },
+    { icon: GraduationCap, label: 'MEMBER', route: '/member' },
+    { icon: Briefcase, label: 'STUDENT', route: '/student' },
+    { icon: Globe, label: 'CONTACT', route: '/contact' },
     // { icon: PlayCircle, label: 'MEDIA CENTRE' },
     // { icon: Building, label: 'CAREERS' },
     // { icon: Building, label: 'TENDERS' },
@@ -28,8 +29,9 @@ const Navigation = () => {
             {navItems.map((item, index) => {
               const Icon = item.icon;
               return (
-                <button
+                <Link
                   key={index}
+                  to={item.route}
                   className={`flex items-center space-x-2 px-4 py-3 whitespace-nowrap group ${
                     item.active
                       ? 'bg-white text-blue-900 shadow-xl transform scale-105'
@@ -38,7 +40,7 @@ const Navigation = () => {
                 >
                   <Icon size={16} className="group-hover:scale-110 transition-transform duration-300" />
                   <span className="text-sm font-medium">{item.label}</span>
-                </button>
+                </Link>
               );
             })}
           </div>
@@ -60,8 +62,9 @@ const Navigation = () => {
           <div className="lg:hidden absolute top-full left-0 right-0 bg-gradient-to-b from-blue-900 to-blue-800 shadow-2xl z-50">
             <div className="py-2">
               {navItems.map((item, index) => (
-                <button
+                <Link
                   key={index}
+                  to={item.route}
                   className={`w-full text-left px-6 py-4 transition-all duration-200 border-b border-blue-700/30 last:border-b-0 ${
                     item.active
                       ? 'bg-blue-700/50 text-white font-semibold'
@@ -70,7 +73,7 @@ const Navigation = () => {
                   onClick={() => setIsMobileNavOpen(false)}
                 >
                   <span className="text-sm font-medium tracking-wide">{item.label}</span>
-                </button>
+                </Link>
               ))}
             </div>
           </div>
