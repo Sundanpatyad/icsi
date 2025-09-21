@@ -44,16 +44,16 @@ const Header = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail size={14} />
-                <span>info@icsi.edu</span>
+                <span>info@mountainedu.in</span>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
+            {/* <div className="flex items-center space-x-4">
               <span>A Statutory Body Corporate under an Act of Parliament</span>
               <div className="flex items-center space-x-2">
                 <Globe size={14} />
                 <span>English</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -236,7 +236,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <VisionBanner />
+      {/* <VisionBanner /> */}
     </>
   );
 };
