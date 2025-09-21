@@ -34,7 +34,7 @@ const Header = () => {
   return (
     <>
       {/* Top Bar - Hidden on mobile */}
-      <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white py-2 hidden lg:block">
+      <div className=" text-white py-2 hidden lg:block" style={{ backgroundColor: "#E14F22" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center space-x-6">

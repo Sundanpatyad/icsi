@@ -20,7 +20,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 shadow-xl relative">
+    <nav className=" shadow-xl relative" style={{ backgroundColor: "#E14F22" }}>
       <div className="mx-auto flex justify-center px-4 sm:px-6 lg:px-8">
               
         {/* Desktop Navigation */}

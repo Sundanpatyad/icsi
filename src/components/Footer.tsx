@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import Logo from '../assets/logo.png';
 
 const Footer = () => {
   return (
@@ -9,9 +10,11 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold mr-4">
-                ICSI
-              </div>
+             <img
+  src={Logo} // ← update this path
+  alt="ICSI Logo"
+  className="w-12 h-12 object-contain mr-4"
+/>
               <div>
                 <h3 className="text-lg font-bold">The Institute of Company Secretaries of India</h3>
                 <p className="text-sm text-gray-300">भारतीय कंपनी सचिव संस्थान</p>
