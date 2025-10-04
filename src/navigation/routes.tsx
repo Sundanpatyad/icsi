@@ -1,8 +1,11 @@
 import { RouteObject } from "react-router-dom";
 import Home from "../screens/Home";
 import AboutICSI from "../screens/About_us";
+import Courses from "../screens/Courses";
+import Member from "../screens/Member";
+import Student from "../screens/Student";
+import Contact from "../screens/Contact";
 import MainLayout from "../components/MainLayout";
-import ComingSoon from "../screens/Coming_soon";
 
 const routes: RouteObject[] = [
   {
@@ -11,12 +14,12 @@ const routes: RouteObject[] = [
     children: [
       { path: "/", element: <Home /> },
       { path: "/about", element: <AboutICSI /> },
+      { path: "/courses", element: <Courses /> },
+      { path: "/member", element: <Member /> },
+      { path: "/student", element: <Student /> },
+      { path: "/contact", element: <Contact /> },
     ],
   },
-  { path: "/courses", element: <ComingSoon /> },
-  { path: "/member", element: <ComingSoon /> },
-  { path: "/student", element: <ComingSoon /> },
-  { path: "/contact", element: <ComingSoon /> },
 ];
 
 export default routes;

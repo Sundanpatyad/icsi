@@ -1,26 +1,30 @@
 import React from 'react';
 import { Home, User, Users, GraduationCap, Briefcase, Globe, PlayCircle, Building, Phone, FileText, Menu } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = React.useState(false);
+  const location = useLocation();
 
   const navItems = [
-    { icon: Home, label: 'HOME', active: true, route: '/' },
+    { icon: Home, label: 'HOME', route: '/' },
     { icon: User, label: 'ABOUT', route: '/about' },
     { icon: Users, label: 'COURSES', route: '/courses' },
     { icon: GraduationCap, label: 'MEMBER', route: '/member' },
     { icon: Briefcase, label: 'STUDENT', route: '/student' },
     { icon: Globe, label: 'CONTACT', route: '/contact' },
-    // { icon: PlayCircle, label: 'MEDIA CENTRE' },
-    // { icon: Building, label: 'CAREERS' },
-    // { icon: Building, label: 'TENDERS' },
-    // { icon: Phone, label: 'CONTACT US' },
-    // { icon: FileText, label: 'EXAMINATION' },
   ];
 
+  // Function to check if a route is active
+  const isActiveRoute = (route: string) => {
+    if (route === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(route);
+  };
+
   return (
-    <nav className=" shadow-xl relative" style={{ backgroundColor: "#E14F22" }}>
+    <nav className=" relative" style={{backgroundColor: "#f75f31" }}>
       <div className="mx-auto flex justify-center px-4 sm:px-6 lg:px-8">
               
         {/* Desktop Navigation */}
@@ -28,14 +32,15 @@ const Navigation = () => {
           <div className="flex space-x-1 overflow-x-auto scrollbar-hide">
             {navItems.map((item, index) => {
               const Icon = item.icon;
+              const isActive = isActiveRoute(item.route);
               return (
                 <Link
                   key={index}
                   to={item.route}
                   className={`flex items-center space-x-2 px-4 py-3 whitespace-nowrap group ${
-                    item.active
-                      ? 'bg-white text-blue-900 shadow-xl transform scale-105'
-                      : 'text-white hover:bg-blue-700/80 hover:shadow-lg hover:scale-105'
+                    isActive
+                      ? 'bg-white text-orange-600 shadow-xl transform scale-105'
+                      : 'text-white hover:bg-white/20 hover:shadow-lg hover:scale-105'
                   }`}
                 >
                   <Icon size={16} className="group-hover:scale-110 transition-transform duration-300" />
@@ -61,20 +66,23 @@ const Navigation = () => {
         {isMobileNavOpen && (
           <div className="lg:hidden absolute top-full left-0 right-0 bg-gradient-to-b from-blue-900 to-blue-800 shadow-2xl z-50">
             <div className="py-2">
-              {navItems.map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.route}
-                  className={`w-full text-left px-6 py-4 transition-all duration-200 border-b border-blue-700/30 last:border-b-0 ${
-                    item.active
-                      ? 'bg-blue-700/50 text-white font-semibold'
-                      : 'text-white hover:bg-blue-700/40'
-                  }`}
-                  onClick={() => setIsMobileNavOpen(false)}
-                >
-                  <span className="text-sm font-medium tracking-wide">{item.label}</span>
-                </Link>
-              ))}
+              {navItems.map((item, index) => {
+                const isActive = isActiveRoute(item.route);
+                return (
+                  <Link
+                    key={index}
+                    to={item.route}
+                    className={`w-full text-left px-6 py-4 transition-all duration-200 border-b border-white/20 last:border-b-0 ${
+                      isActive
+                        ? 'bg-white/20 text-white font-semibold border-l-4 border-l-white'
+                        : 'text-white hover:bg-white/10'
+                    }`}
+                    onClick={() => setIsMobileNavOpen(false)}
+                  >
+                    <span className="text-sm font-medium tracking-wide">{item.label}</span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         )}
