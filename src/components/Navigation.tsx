@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, User, Users, GraduationCap, Briefcase, Globe, PlayCircle, Building, Phone, FileText, Menu } from 'lucide-react';
+import { Home, User, Users, GraduationCap, Briefcase, Globe, Menu, ClipboardList } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
@@ -10,6 +10,7 @@ const Navigation = () => {
     { icon: Home, label: 'HOME', route: '/' },
     { icon: User, label: 'ABOUT', route: '/about' },
     { icon: Users, label: 'COURSES', route: '/courses' },
+    { icon: ClipboardList, label: 'EXAMINATION', route: '/examination' },
     { icon: GraduationCap, label: 'MEMBER', route: '/member' },
     { icon: Briefcase, label: 'STUDENT', route: '/student' },
     { icon: Globe, label: 'CONTACT', route: '/contact' },
